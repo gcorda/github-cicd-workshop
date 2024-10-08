@@ -24,7 +24,7 @@ jobs:
         MESSAGE_OUT: ${{ steps.call_message.outputs.same_message }}
     - name: was_the_same
       if: ${{ steps.call_message.outputs.same_message }} == 'I like to read my own message'
-      shell: bash"
+      shell: bash
       run: echo was the same
 
       
