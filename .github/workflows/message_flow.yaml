@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Print message
-      uses: ./github/actions/print_message
+      uses: gcorda/github/actions/print_message
       with:
         message: I like to read my own message
       
