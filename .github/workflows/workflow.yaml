@@ -1,0 +1,19 @@
+name: Docker CD Pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - runs:
+          using: 'docker'
+          image: 'Dockerfile'
+
+  # More jobs can be added
