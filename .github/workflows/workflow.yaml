@@ -25,6 +25,7 @@ jobs:
           context: exercise_3
 
   deployment:
+    name: deploy_to_${{ matrix.env }}
     runs-on: ubuntu-latest
     needs: build
     environment: ${{ matrix.env }}
