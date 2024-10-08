@@ -1,0 +1,26 @@
+name: 'Print message'
+description: 'Print a message'
+inputs:
+  message:  # id of input
+    description: 'Message to print'
+    required: true
+    default: 'Be original!!'
+outputs:
+  same_messager:
+    description: "Message to print"
+    value: ${{ steps.return-message.outputs.message-out }}
+runs:
+  using: "composite"
+  steps:
+    - name: Set Greeting
+      run: echo "Hello $INPUT_WHO_TO_GREET."
+      shell: bash
+      env:
+        INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
+
+    - name: Return message
+      id: return-message
+      run: echo "message-out=$(echo $MESSAGE_IN)" >> $GITHUB_OUTPUT
+      shell: bash
+      env:
+        MESSAGE_IN: ${{ inputs.message }}
