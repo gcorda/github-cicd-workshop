@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    concurrency: deploy_flow
     steps:
       - uses: actions/checkout@v4
       -
@@ -30,7 +29,7 @@ jobs:
     strategy:
           matrix:
              env: [dev, int, pro]
-    concurrency: deploy_flow
+          max-parallel: 1
     steps:
       - name: deploy ${{ matrix.env }}
         run: sleep 5
