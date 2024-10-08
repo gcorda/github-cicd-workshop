@@ -6,12 +6,12 @@ on:
       - master
 
 jobs:
-  build:
+  print_message:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Print message
-      uses: ./github/actions/prin_message
+      uses: ./github/actions/print_message
       with:
         message: I like to read my own message
       
