@@ -24,7 +24,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/app:latest
           context: exercise_3
 
-  deployment_dev:
+  deployment:
     runs-on: ubuntu-latest
     environment: ${{ matrix.env }}
     strategy:
