@@ -11,8 +11,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Print message
+      id: call_message
       uses: ./.github/actions/print_message
       with:
         message: I like to read my own message
+    - run: echo message "$MESSAGE_OUT"
+      shell: bash
+      env:
+        MESSAGE_OUT: ${{ steps.call_message.outputs.same_message }}
       
         

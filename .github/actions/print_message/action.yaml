@@ -6,7 +6,7 @@ inputs:
     required: true
     default: 'Be original!!'
 outputs:
-  same_messager:
+  same_message:
     description: "Message to print"
     value: ${{ steps.return-message.outputs.message-out }}
 runs:
