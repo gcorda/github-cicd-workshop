@@ -1,4 +1,4 @@
-# Setup Instructions
+# Setup Instructions new
 
 1. Go to [GitPod Integrations page](https://gitpod.io/user/integrations): 
 
