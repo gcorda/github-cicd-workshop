@@ -24,23 +24,12 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/app:latest
           context: exercise_3
+          
   deployment_dev:
-    runs-on: ubuntu-latest
-    environment: dev
-    concurrency: deploy_flow
-    steps:
-      - name: deploy dev
-        run: sleep 5
-  deployment_int:
-    runs-on: ubuntu-latest
-    environment: int
-    concurrency: deploy_flow
-    steps:
-      - name: deploy dev
-        run: sleep 5
-  deployment_pro:
-    runs-on: ubuntu-latest
-    environment: pro
+    runs-on: ${{ matrix.env }}
+    strategy:
+          matrix:
+             env: [de, int, pro]
     concurrency: deploy_flow
     steps:
       - name: deploy dev
