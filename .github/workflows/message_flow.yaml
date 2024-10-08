@@ -12,6 +12,7 @@ jobs:
     - uses: actions/checkout@v4
     - name: Print message
       uses: ./github/actions/prin_message
-      message: I like to read my own message
+      with:
+        message: I like to read my own message
       
         
