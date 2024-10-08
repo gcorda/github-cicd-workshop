@@ -3,7 +3,7 @@ name: Docker CD Pipeline
 on:
   push:
     branches:
-      - master
+      - test
 
 jobs:
   build:
