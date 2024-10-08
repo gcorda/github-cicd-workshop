@@ -33,6 +33,7 @@ jobs:
           matrix:
              env: [dev, int, pro]
           max-parallel: 1
+          fail-fast: true
     steps:
       - name: deploy ${{ matrix.env }}
         run: sleep 5
