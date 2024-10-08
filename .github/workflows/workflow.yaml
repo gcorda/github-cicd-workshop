@@ -25,7 +25,8 @@ jobs:
           context: exercise_3
 
   deployment_dev:
-    runs-on: ${{ matrix.env }}
+    runs-on: ubuntu-latest
+    environment: ${{ matrix.env }}
     strategy:
           matrix:
              env: [dev, int, pro]
