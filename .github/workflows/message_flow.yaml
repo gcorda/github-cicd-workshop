@@ -15,7 +15,7 @@ jobs:
       uses: ./.github/actions/print_message
       with:
         message: I like to read my own message
-    - run: echo message "$MESSAGE_OUT"
+    - run: echo "message:" "$MESSAGE_OUT"
       shell: bash
       env:
         MESSAGE_OUT: ${{ steps.call_message.outputs.same_message }}
